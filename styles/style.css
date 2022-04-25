@@ -7,13 +7,433 @@ html, body {
   height:100%;
   margin:0;
 }
+:root{
+    --achtergrondkleur:rgba(0,0,0,0.80);
+    --onzichtbaar:rgba(0,0,0,0):
+}
 
 button:not([disabled]) {
   cursor:pointer;
 }
 
-/* jouw CSS vanaf hier */
+/* hoofdmenu */
+ body.hoofdmenu{
+  background-image: url(../images/kamer/achtergornd.png);
+  background-color: var(--achtergrondkleur);
+  background-repeat: no-repeat;
+  background-size:100em;
+  background-position: center bottom;
+}
 
-h1 {
-  color:crimson;
+header{
+  text-align: center;
+}
+
+header img{
+width: 25em;
+padding-top: 5em;
+}
+
+header p{
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  
+ul{ 
+  position: absolute;
+  left:calc(50% - 18em);
+  bottom:5vh;
+  width:36em;
+  aspect-ratio:650/400;
+  padding:.5em 1em;
+
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap: 1em .5em;
+  justify-content: center;
+
+  background-image: url(../images/kamer/vinny.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+li{
+  list-style-type:none;
+  padding-bottom:.5em;
+
+  display:grid;
+  justify-items: center;
+  align-items: end;
+
+  perspective: 10em;
+  transform-style: preserve-3d;
+}
+
+li button{
+   transform:rotateX(30deg);
+  transform-origin:center bottom;
+
+  display:inline-block;
+
+  background-color: rgba(0,0,0,0);
+  border: none;
+  
+  transition:0.5s;
+}
+
+.hovertekst{
+  position: absolute;
+  bottom:7em;
+  color:white;
+  transition: 1s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+li button img {
+  width: 7em;
+  display:block;
+}
+
+li button:hover{
+  transform:rotateX(10deg);
+  perspective-origin: 100% center;
+}
+
+li:nth-of-type(1) {
+  perspective-origin: 100% center;
+}
+li:nth-of-type(2) {
+  perspective-origin: 75% center;
+}
+li:nth-of-type(3) {
+  perspective-origin: 25% center;
+}
+li:nth-of-type(4) {
+  perspective-origin: 0% center;
+}
+li:nth-of-type(5) {
+  transform:rotateX(-25deg);
+  perspective-origin: 100% center;
+}
+li:nth-of-type(6) {
+  transform:rotateX(-25deg);
+  perspective-origin: 75% center;
+}
+li:nth-of-type(7) {
+  transform:rotateX(-25deg);
+  perspective-origin: 25% center;
+}
+
+/* informatie album*/
+
+.achtergrondvideo video{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -3;
+
+  animation-name:zichtbaar;
+  animation-delay: 4s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0%;
+}
+
+.achtergrondkleur{
+  background-color:var(--achtergrondkleur) ;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: -2;
+
+  animation-name:zichtbaar;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 100%;
+}
+
+.informatie{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 50em;
+  max-height: 100vh;
+  padding: 1em;
+  z-index: 2;
+
+  background: radial-gradient(circle, rgba(0,0,0,0.6) 25%, rgba(184,184,184,0) 60%);
+  
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.5em;
+
+  animation-name:zichtbaar;
+  animation-delay: 6s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0%;
+  
+}
+.informatie p{
+  font-size: 1.2em;
+}
+.informatie h1{
+  font-size: 4em;
+}
+
+section.vinyl{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left:50%;
+  top:50%;
+  position: absolute;  
+}
+img.vinyl{
+  max-width: 15em;
+  position: absolute;
+
+  animation-name: draaien;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+img.albumhoes{
+  max-width: 15em;
+  position: absolute;
+  z-index: 1;
+
+  animation-name: albumweg;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition-timing-function: cubic-bezier(0.520, -0.210, 0.275, 0.870);
+}
+
+.sluitknop{
+  position: fixed;
+  left: 5%;
+  top: 5%;
+  padding:1em;
+  z-index: 2;
+
+  background-color: rgba(0,0,0,0);
+  border: solid;
+  border-color: rgba(150,150,150,0);
+  border-radius: 4em;
+  transform: rotate(45deg);
+  transition: 0.5s;
+
+  animation-name:zichtbaar;
+  animation-delay: 6s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0%;
+}
+.sluitknop img{
+  width: 3em;
+}
+
+button.sluitknop:hover{
+  transition: 0.5s;
+  border: solid; 
+  border-color: rgba(150,150,150, 0.5);
+  transform: rotate(25deg);
+}
+
+/* animaties */
+@keyframes begindraai {
+  0% {
+      transform:rotate(0deg);
+  }
+
+  100% {
+      transform:rotate(10deg);
+  }
+}
+
+@keyframes draaien {
+  0% {
+      transform:rotate(0deg);
+  }
+
+  100% {
+      transform:rotate(360deg);
+  }
+}
+
+@keyframes zichtbaar {
+  0% {
+      opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+    ;
+  }
+}
+
+@keyframes zichtbaar-kleur {
+  0% {
+      opacity: 100%;
+      background-color: rgb;
+  }
+
+  100% {
+    opacity: 80%;
+    ;
+  }
+}
+
+
+@keyframes albumweg{  
+  0% {
+      opacity: 100%;
+  }
+  20%{
+    transform: translatey(3em)
+  }
+  40%{transform: rotatey(10deg) rotatez(10deg) translatey(4em);
+  }
+  60%{transform: rotatey(-10deg) rotatez(-10deg) translatey(5em);
+  }
+  75% {
+    transform: rotatey(0deg) rotatez(0deg) translatey(6em);
+    opacity:100% 
+  }
+  100% {
+    opacity: 0%;
+    transform: translatey(10em)
+    ;
+  }
+}
+
+/**************/
+/* JAVASCRIPT */
+/**************/
+
+/* gorillazovergang*/
+article.gorillazalbum{
+  display:none;
+}
+.gorillazovergang article.gorillazalbum{  
+  display:block;
+}
+.gorillazovergang ul{
+  display:none;
+}
+.gorillazovergang header {
+  display:none;  
+}
+
+/* demonovergang */
+article.demonalbum{
+  display:none;
+}
+
+.demonovergang article.demonalbum{  
+  display:block;
+}
+.demonovergang ul {
+  display:none
+}
+.demonovergang header {
+  display:none
+}
+
+/* plasticovergang */
+article.plasticalbum{
+  display:none;
+}
+.plasticovergang article.plasticalbum{  
+  display:block;
+}
+.plasticovergang ul{
+  display:none;
+}
+.plasticovergang header {
+  display:none;  
+}
+
+/* fallovergang */
+article.fallalbum{
+  display:none;
+}
+.fallovergang article.fallalbum{  
+  display:block;
+}
+.fallovergang ul{
+  display:none;
+}
+.fallovergang header {
+  display:none;  
+}
+
+/* humanzovergang */
+article.humanzalbum{
+  display:none;
+}
+.humanzovergang article.humanzalbum{  
+  display:block;
+}
+.humanzovergang ul{
+  display:none;
+}
+.humanzovergang header {
+  display:none;  
+}
+
+/* nowovergang */
+article.nowalbum{
+  display:none;
+}
+.nowovergang article.nowalbum{  
+  display:block;
+}
+.nowovergang ul{
+  display:none;
+}
+.nowovergang header {
+  display:none;  
+}
+
+/* songovergang */
+article.songalbum{
+  display:none;
+}
+.songovergang article.songalbum{  
+  display:block;
+}
+.songovergang ul{
+  display:none;
+}
+.songovergang header {
+  display:none;  
 }
