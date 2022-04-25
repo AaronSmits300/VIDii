@@ -13,10 +13,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Jij
 
 ### Ontwerper:
-Sanne 't Hooft (vervangen door jouw naam)
+Aaron Smits
 
 #### Je startniveau:
-Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
+Mijn startniveau is: Rood
 
 
 
@@ -26,15 +26,15 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
 <details open>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
-
+Het concept waa rik nu eindelijk voor gekozen heb is het album concept, ik ga van de band gorillaz alle albums als een vinyl te presenteren. Via deze vinyls hoor je de muziek van de gorillaz en lees je over hoe erg hun stijl is veranderd bij dat album.
   ### De eerste versie/schets:
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="eerste versie/schets">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
+  - Een leuke interactieve pagina maken die een unieke ervaring aanbied.
+  - 
   - nog een punt
   - ...
  
@@ -49,15 +49,15 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
+  Wist nog niets welk concept ik wou gebruiken.
+  
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Hoe ik de interface het beste zou kunnen toepassen.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
@@ -161,8 +161,10 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-1. bron 1
-2. bron 2
-3. ...
+1. https://cssgridgarden.com/#nl (grid oefeningen)
+2. https://codepen.io/blindingstars/pen/LpzvpX (centreren tekst)
+3. https://github.com/AaronSmits300/frontendwebsite (opdracht di ik heb gebruik voor begrijpen javascript)
+4. https://www.wikipedia.org/ (afbeeldingen van gorillaz)
+5. youtube.com (videos van gorillaz)
 
 </details>
