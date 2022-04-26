@@ -16,22 +16,23 @@ button:not([disabled]) {
   cursor:pointer;
 }
 
-/* hoofdmenu */
+/* start */
  body.hoofdmenu{
-  background-image: url(../images/kamer/achtergornd.png);
+  background-image: url(../images/kamer/achtergorndtest.png);
   background-color: var(--achtergrondkleur);
   background-repeat: no-repeat;
-  background-size:100em;
+  background-size:cover;
   background-position: center bottom;
 }
 
+/* header */
 header{
   text-align: center;
 }
 
 header img{
 width: 25em;
-padding-top: 5em;
+padding-top: 3em;
 }
 
 header p{
@@ -40,7 +41,11 @@ header p{
   font-size: large;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-  
+ 
+/* ************ */
+/* albumlijst */
+/* ************ */
+
 ul{ 
   position: absolute;
   left:calc(50% - 18em);
@@ -59,6 +64,9 @@ ul{
   background-repeat:no-repeat;
   background-size: cover;
 }
+ul li{
+  z-index: 3;
+}
 
 li{
   list-style-type:none;
@@ -67,40 +75,74 @@ li{
   display:grid;
   justify-items: center;
   align-items: end;
+  z-index: 3;
+
 
   perspective: 10em;
   transform-style: preserve-3d;
 }
 
 li button{
-   transform:rotateX(30deg);
-  transform-origin:center bottom;
-
   display:inline-block;
 
-  background-color: rgba(0,0,0,0);
+  background-color: var(--onzichtbaar);
   border: none;
   
   transition:0.5s;
-}
-
-.hovertekst{
-  position: absolute;
-  bottom:7em;
-  color:white;
-  transition: 1s;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 li button img {
   width: 7em;
   display:block;
+  transition: .3s; 
 }
 
-li button:hover{
+
+li:nth-child(-n+4) button{
+  transform-origin:center bottom;
+  transform:rotateX(30deg);
+}
+
+li:nth-child(n+5) button{
+  transform-origin:center bottom;
+  transform:rotateX(20deg);
+}
+
+li:nth-child(-n+4) button:hover {
+ transform:rotateX(10deg);
+}
+li:nth-child(n+5) button:hover {
   transform:rotateX(10deg);
+ }
+
+li:nth-of-type(1) button:hover img{
+  box-shadow:.5em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(2) button:hover img{
+  box-shadow:.2em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(3) button:hover img{
+  box-shadow:-.2em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(4) button:hover img{
+  box-shadow:-.5em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(5) button:hover img{
+  box-shadow:.5em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(6) button:hover img{
+  box-shadow:.2em .3em 0.5em rgb(0 0 0 / .5);
+}
+li:nth-of-type(7) button:hover img{
+  box-shadow:-.2em .3em 0.5em rgb(0 0 0 / .5);
+}
+
+li button img:active{
+  transform: scale(1.2) rotateX(10deg);
   perspective-origin: 100% center;
+  transform-origin:center bottom;
+
 }
 
 li:nth-of-type(1) {
@@ -116,19 +158,70 @@ li:nth-of-type(4) {
   perspective-origin: 0% center;
 }
 li:nth-of-type(5) {
-  transform:rotateX(-25deg);
   perspective-origin: 100% center;
 }
 li:nth-of-type(6) {
-  transform:rotateX(-25deg);
   perspective-origin: 75% center;
 }
 li:nth-of-type(7) {
-  transform:rotateX(-25deg);
   perspective-origin: 25% center;
 }
 
+/* tekst voor hover effect */
+.hovertekst{
+  position: absolute;
+  justify-content: center;
+  bottom:5em;
+  
+  font-size: .8em;
+  opacity: 0%;  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:rgba(255,255,255,0.80);
+  transition: 0.5s;
+  z-index:-4;
+
+  pointer-events: none;
+}
+
+li button:hover + .hovertekst { 
+  bottom:6em;
+  opacity: 100%;  
+  transition: 0.5s;
+  font-size: 1em;
+
+}
+
+/* ************ */
+/* el diablo */
+/* ************ */
+.bassbutton{
+  position: absolute;
+  left:calc(50% - 37em);
+  bottom:7vh;
+  
+  background-color: var(--onzichtbaar);
+  border: none;
+  z-index:2;
+}
+
+#diablo{
+  width: 15em;
+  padding: 32em;
+  transform: rotate(18deg);
+  padding:.5em 1em;
+  transform-origin: bottom;  
+  justify-content: center;
+  transition:0.3s
+}
+
+#diablo:hover{
+  transform: rotate(15deg);
+  transition:0.3s;
+}
+
+/* **************** */
 /* informatie album*/
+/* **************** */
 
 .achtergrondvideo video{
   width: 100vw;
@@ -151,7 +244,7 @@ li:nth-of-type(7) {
 }
 
 .achtergrondkleur{
-  background-color:var(--achtergrondkleur) ;
+  background-color:rgba(35,35,35) ;
   position: absolute;
   top: 0;
   right: 0;
@@ -160,8 +253,10 @@ li:nth-of-type(7) {
   max-width: 100%;
   z-index: -2;
 
-  animation-name:zichtbaar;
-  animation-duration: 0.3s;
+  animation-name:zichtbaar-kleur;
+  transition: 0.5s;
+  animation-delay: 5s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -200,6 +295,7 @@ li:nth-of-type(7) {
 .informatie p{
   font-size: 1.2em;
 }
+
 .informatie h1{
   font-size: 4em;
 }
@@ -216,14 +312,14 @@ img.vinyl{
   max-width: 15em;
   position: absolute;
 
-  animation-name: draaien;
-  animation-duration: 5s;
-  animation-delay: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-name: draaien, draaien;
+  animation-duration:5s, 5s;
+  animation-delay: 3s, 8s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: cubic-bezier(0.230, -0.005, 1.000, 1.000), linear;
 }
 img.albumhoes{
-  max-width: 15em;
+  max-width: 16em;
   position: absolute;
   z-index: 1;
 
@@ -237,8 +333,8 @@ img.albumhoes{
 
 .sluitknop{
   position: fixed;
-  left: 5%;
-  top: 5%;
+  left: 8%;
+  top: 8%;
   padding:1em;
   z-index: 2;
 
@@ -267,19 +363,75 @@ button.sluitknop:hover{
   border-color: rgba(150,150,150, 0.5);
 }
 
-button.sluitknop:hover{
-  transition: 0.5s;
-  border: solid; 
-  border-color: rgba(150,150,150, 0.5);
-}
-
 button.sluitknop:active{
   transition: 0.5s;
   transform: rotate(-15deg);
 }
 
+/* text vormgeving albums */
 
+.gorillazalbum p{
+  text-shadow: .08em .08em rgb(18, 94, 34);
+}
+.gorillazalbum h1{
+  text-shadow: .04em .04em  rgba(192, 18, 18), 
+  -.02em -.02em  rgba(24, 134, 46);
+} 
+
+.demonalbum p{
+  text-shadow: .08em .08em rgb(6, 40, 108);
+}
+.demonalbum h1{
+  text-shadow: .04em .04em rgb(147, 31, 31), 
+  -.02em -.02em  rgb(5, 24, 143);
+} 
+
+
+.plasticalbum p{
+  text-shadow: .08em .08em  rgb(190, 62, 2);
+}
+.plasticalbum h1{
+  text-shadow: .04em .04em rgb(159, 74, 0), 
+  -.02em -.02em rgb(255, 80, 127);
+} 
+
+
+.fallalbum p{
+  text-shadow: .08em .08em rgb(21, 25, 123);
+}
+.fallalbum h1{
+  text-shadow: .04em .04em rgb(15, 78, 107), 
+  -.02em -.02em  rgb(118, 43, 43);
+} 
+
+
+.humanzalbum p{
+  text-shadow: .08em .08em rgb(173, 5, 64);
+}
+.humanzalbum h1{
+  text-shadow: .04em .04em rgb(113, 27, 184), 
+  -.02em -.02em  rgba(178, 93, 24);
+}
+
+.nowalbum p{
+  text-shadow: .08em .08em rgb(183, 12, 240);
+}
+.nowalbum h1{
+  text-shadow: .04em .04em rgb(16, 152, 211), 
+  -.02em -.02em rgb(200, 37, 118);
+}
+
+.songalbum p{
+  text-shadow: .08em .08em rgb(166, 40, 88);
+}
+.songalbum h1{
+  text-shadow: .04em .04em rgb(211, 56, 0), 
+  -.02em -.02em rgb(9, 208, 135);
+}
+
+/* **************** */
 /* animaties */
+/* **************** */
 @keyframes begindraai {
   0% {
       transform:rotate(0deg);
@@ -314,7 +466,6 @@ button.sluitknop:active{
 @keyframes zichtbaar-kleur {
   0% {
       opacity: 100%;
-      background-color: rgb;
   }
 
   100% {
@@ -346,9 +497,54 @@ button.sluitknop:active{
   }
 }
 
+@keyframes spelen{
+  0%{
+    transform: rotate(3deg);
+  }
+  10%{ 
+    transform: rotate(-3deg);
+  }
+  20%{ 
+    transform: rotate(3deg);
+  }
+  30%{ 
+    transform: rotate(-3deg);
+  }
+  40%{
+    transform: rotate(3deg);
+  }
+  50%{ 
+    transform: rotate(-3deg);
+  }
+  60%{
+    transform: rotate(3deg);
+  }
+  70%{ 
+    transform: rotate(-3deg);
+  }
+  80%{
+    transform: rotate(3deg);
+  }
+  90%{ 
+    transform: rotate(-3deg);
+  }
+  100%{
+    transform: rotate(3deg);
+  }
+}
+
 /**************/
 /* JAVASCRIPT */
 /**************/
+
+/* bassspelen */
+.muziekspelen .bassbutton{
+  animation-name:spelen;
+  animation-duration: 7s;
+  animation-timing-function: auto;
+  transition: 0.3s;
+  transform-origin: bottom;
+}
 
 /* gorillazovergang*/
 article.gorillazalbum{
@@ -356,11 +552,17 @@ article.gorillazalbum{
 }
 .gorillazovergang article.gorillazalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .gorillazovergang ul{
   display:none;
 }
 .gorillazovergang header {
+  display:none;  
+}
+.gorillazovergang #diablo {
   display:none;  
 }
 
@@ -371,12 +573,18 @@ article.demonalbum{
 
 .demonovergang article.demonalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .demonovergang ul {
   display:none
 }
 .demonovergang header {
   display:none
+}
+.demonovergang #diablo {
+  display:none;  
 }
 
 /* plasticovergang */
@@ -385,11 +593,17 @@ article.plasticalbum{
 }
 .plasticovergang article.plasticalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .plasticovergang ul{
   display:none;
 }
 .plasticovergang header {
+  display:none;  
+}
+.plasticovergang #diablo {
   display:none;  
 }
 
@@ -399,11 +613,17 @@ article.fallalbum{
 }
 .fallovergang article.fallalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .fallovergang ul{
   display:none;
 }
 .fallovergang header {
+  display:none;  
+}
+.fallovergang #diablo {
   display:none;  
 }
 
@@ -413,11 +633,17 @@ article.humanzalbum{
 }
 .humanzovergang article.humanzalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .humanzovergang ul{
   display:none;
 }
 .humanzovergang header {
+  display:none;  
+}
+.humanzovergang #diablo {
   display:none;  
 }
 
@@ -427,11 +653,17 @@ article.nowalbum{
 }
 .nowovergang article.nowalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .nowovergang ul{
   display:none;
 }
 .nowovergang header {
+  display:none;  
+}
+.nowovergang #diablo {
   display:none;  
 }
 
@@ -441,6 +673,9 @@ article.songalbum{
 }
 .songovergang article.songalbum{  
   display:block;
+  animation-name: zichtbaar;
+  transition: 1s;
+  animation-duration: 0.3s;
 }
 .songovergang ul{
   display:none;
@@ -448,3 +683,9 @@ article.songalbum{
 .songovergang header {
   display:none;  
 }
+.songovergang #diablo {
+  display:none;  
+}
+
+
+

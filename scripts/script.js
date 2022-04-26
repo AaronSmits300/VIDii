@@ -11,7 +11,11 @@ var songButton = document.querySelector("#album7");
 
 //navigatie
 var terugButtons = document.querySelectorAll(".sluitknop");
+var bassButton = document.querySelector(".bassbutton")
 var setTimeout;
+
+//geluid
+var Geluidbass =document.querySelector("#goodsolo")
 
 //videos
 var videoG = document.querySelector("#gorillazvideo");
@@ -83,7 +87,35 @@ function gaterug() {
     videoH.pause();videoH.currentTime = 0;
     videoN.pause();videoN.currentTime = 0;
     videoS.pause();videoS.currentTime = 0;
+}
 
+var aanHetSpelen = false;
+
+
+function bassspelen(){
+    if (aanHetSpelen) {
+        // niks doen - is al aan het spelen
+    } else {
+        aanHetSpelen = true;
+        document.body.classList.add("muziekspelen");
+
+        // var bassButton= document.getElementById("#goodsolo");
+        
+        Geluidbass.currentTime=2;
+        Geluidbass.play();
+        // console.log(Geluidbass.currentTime); // dit is om de huidige tijd te bekijken in de audio
+           
+        // de set interval hier is om te checken dat als het geluid over 7 seconden is dat hij dan weer bij de start begint
+        setInterval(function(){
+            if(Geluidbass.currentTime>8){
+                Geluidbass.pause();
+                document.body.classList.remove("muziekspelen");
+                aanHetSpelen = false;
+            }
+        },1000);
+    }
+
+   
 }
 
 //eventlisteners
@@ -95,11 +127,8 @@ humanzButton.addEventListener('click', naarhumanz);
 nowButton.addEventListener('click', naarnow);
 songButton.addEventListener('click', naarsong);
 
+bassButton.addEventListener('click', bassspelen)
 
 terugButtons.forEach(terugButton => {
     terugButton.addEventListener('click', gaterug);
 });
-
-
-
-
