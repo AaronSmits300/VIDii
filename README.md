@@ -28,8 +28,8 @@ Mijn startniveau is: Rood
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
   Het concept waar ik nu eindelijk voor gekozen heb is het album concept, ik ga van de band gorillaz alle albums als een vinyl te presenteren. Via deze vinyls hoor je de muziek van de gorillaz en lees je over hoe erg hun stijl is veranderd bij dat album.
 
-  De pagina begint op een kamer waar je alle albums te zien krijgt in een meubel stuk voor vinyls. 
-  De kamer heeft een duidelijke stijl en karakter. Hierdoor is het duidelijk voor de gebruiker wat de context is van deze pagina is en waar het over gaat
+  De pagina begint op een kamer waar je alle albums te zien krijgt in een meubelstuk waar de vinyls in zitten. 
+  De kamer heeft een duidelijke stijl en karakter. Hierdoor is het duidelijk voor de gebruiker wat de context is van deze pagina is en over welke band het gaat.
 
   ### De eerste schetsen:
   <img src="readme-images/schets1.jpg" width="375px" alt="eerste versie/schets">
@@ -67,7 +67,7 @@ Mijn startniveau is: Rood
   <img src="readme-images/gameconcept.png" width="375px" alt="game concept">
 
   #### oplossing:
-  Met alle concepten die ik heb bedacht bleek uiteindelijk het album concept het beste te zijn. Tot nu toe wast het het concept waar ik het meest ver was gekomen en Olivier dacht zelf ook
+  Met alle concepten die ik heb bedacht bleek uiteindelijk het album concept het beste te zijn. Tot nu toe was dat het concept waar ik het meest ver was gekomen en Olivier dacht zelf ook dat het concept leuk zou kunnen werken.
 
 
   ### Bevinding 2:
@@ -104,6 +104,7 @@ Mijn startniveau is: Rood
 
   ### Bevinding 1:
   Voor elke pagina wou ik dat alles langzaam ingeladen werdt, ook dus de video. maar omdat te moeten doen moest ik dat toepassen via javascript en ik wist niet hoe ik dat moest doen
+
   #### oplossing:
   Ik vroeg aan Sam (een mede-leerling met meer ervaring) of hij dit wist toe te passen. Hij heeft aan mij uitgelegd hoe ik die code moet toepassen op mijn video en hoe ik het makkelijk maak.
   Voor de functie heb ik uiteindelijk deze code gebruikt:
@@ -113,15 +114,15 @@ Mijn startniveau is: Rood
         videoS.play()
         }, 5000);''
 
-  ### Bevinding 2:
-  De name die ik gaf aan mijn videos waren zeer verwarrend te begrijpen voor degene die mijn feedback gaf.
-  #### oplossing:
-  Hiervoro benoemde ikd e videos in mijn javascript ''vidgo'' (vid voor video an go voor gorillaz) en ik hbe het veranderd naar videoG,hierdoor is het makkelijker te begrijpen dat het videos zijn en de eerste letter geeft dan aan naar welk album het verwijst.
 
+  ### Bevinding 2:
+  De namen die ik gaf aan mijn videos waren zeer verwarrend te begrijpen voor degene die mijn feedback gaf.
+  #### oplossing:
+  Hiervoor benoemde ikd e videos in mijn javascript ''vidgo'' (vid voor video an go voor gorillaz) en ik hen het veranderd naar videoG, hierdoor is het makkelijker te begrijpen dat het videos zijn en de eerste letter geeft dan aan naar welk album het verwijst.
 
 
   ### Bevinding 3:
-  Er zaten te weinig custom properties in mijn bestand en ik wist niet welke ik kon gebruiken, ik kreeg toen een uitleg over hoe ik custom colours kan gebruiken.
+  Er zaten te weinig custom properties in mijn bestand en ik wist niet welke ik kon gebruiken, ik kreeg toen uitleg van een mede student over hoe ik custom colours kan gebruiken.
 
   #### oplossing:
   Ik heb in mijn document custom colours gebruikt voor opties die ik vaak gebruik voor mijn kleuren, specifiek maak ik veel gebruik van rgba (0,0,0,0) om elementen een onzichtbare achtergrond te geven.
@@ -141,13 +142,13 @@ Mijn startniveau is: Rood
   De feedback die ik kreeg van hem was dat de tekst op sommige album pagina's de tekst niet goed te lezen was doordat er geen goede contrast was tussen de achtergrond en tekst.
 
   #### oplossing:
-  Yunus gaf als oplossing dat ik text-shadow kan gebruiken om mijn tekst meer naar voren kan laten komen, dit vond ik een goede suggestie omdat ik op deze manier niet de achtergrond hoef te veranderen terwijl de tekst nog steed nog duidelijk is te lezen
+  Yunus gaf als oplossing dat ik 'text-shadow' kan gebruiken om mijn tekst meer naar voren kan laten komen, dit vond ik een goede suggestie omdat ik op deze manier niet de achtergrond hoef te veranderen terwijl de tekst nog steeds nog duidelijk is te lezen
 
   ### Bevinding 2:
-  Voor de albums heb ik een hover effect toegepast om duidelijk te laten zien uit welk jaar het album komt, maar omdat het tekst is verstoorde de tekst het hover effect. Ik probeer eerst 'user-selecte:none' toe te passen maar dit gaf geen verandering ik wou er dus achter komen hoe ik ervoor kon zorgen dat de tekst niet selecteerbaar wordt.
+  Voor de albums heb ik een hover effect toegepast om duidelijk te laten zien uit welk jaar het album komt, maar omdat het selecteerbare tekst is verstoorde de tekst het hover effect. Ik probeer eerst 'user-select:none' toe te passen maar dit gaf geen verandering ik wou er dus achter komen hoe ik ervoor kon zorgen dat de tekst niet selecteerbaar wordt.
 
   #### oplossing:
-  Ik kreeg van een mede-leerling om de functie '  pointer-events: none;' te gebruiken, hierdoor was de tekst niet meer selecteerbaar waardoor het hover effetc niet verstoord werdt
+  Ik kreeg van een mede-leerling om de functie 'pointer-events: none;' te gebruiken, hierdoor was de tekst niet meer selecteerbaar waardoor het hover effect niet verstoord werdt
  
 </details>
 
@@ -184,7 +185,7 @@ Mijn startniveau is: Rood
   <img src="readme-images/transitie-2.png" width="375px" alt="transitie2">
   <img src="readme-images/transitie-3.png" width="375px" alt="transitie3">
 
-  Ik had ook misschien de albumpagina meer uniek vormgegeven maa romdat ik zelf nog wel moeite heb met css wou ik het liefst het niet te moeilijk te maken voor mijzelf
+  Ik had ook misschien de albumpagina meer uniek vormgegeven maar omdat ik zelf nog wel moeite heb met css wou ik het liefst het niet te moeilijk te maken voor mijzelf
 
   <img src="readme-images/ontwerpalbum.png" width="375px" alt="alternatief album ontwerp">
 
