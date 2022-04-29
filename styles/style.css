@@ -574,7 +574,7 @@ article.gorillazalbum{
 .gorillazovergang header {
   display:none;  
 }
-.gorillazovergang #diablo {
+.gorillazovergang .bassbutton {
   display:none;  
 }
 
@@ -595,7 +595,7 @@ article.demonalbum{
 .demonovergang header {
   display:none
 }
-.demonovergang #diablo {
+.demonovergang .bassbutton{
   display:none;  
 }
 
@@ -615,7 +615,7 @@ article.plasticalbum{
 .plasticovergang header {
   display:none;  
 }
-.plasticovergang #diablo {
+.plasticovergang .bassbutton {
   display:none;  
 }
 
@@ -635,7 +635,7 @@ article.fallalbum{
 .fallovergang header {
   display:none;  
 }
-.fallovergang #diablo {
+.fallovergang .bassbutton {
   display:none;  
 }
 
@@ -655,7 +655,7 @@ article.humanzalbum{
 .humanzovergang header {
   display:none;  
 }
-.humanzovergang #diablo {
+.humanzovergang .bassbutton {
   display:none;  
 }
 
@@ -675,7 +675,7 @@ article.nowalbum{
 .nowovergang header {
   display:none;  
 }
-.nowovergang #diablo {
+.nowovergang .bassbutton {
   display:none;  
 }
 
@@ -695,7 +695,7 @@ article.songalbum{
 .songovergang header {
   display:none;  
 }
-.songovergang #diablo {
+.songovergang .bassbutton {
   display:none;  
 }
 
